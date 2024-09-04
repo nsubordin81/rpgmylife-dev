@@ -1,0 +1,16 @@
+{
+  "name": "rpgmylife-dev",
+  "version": "1.0.0",
+  "description": "Development coordinator for RPG My Life",
+  "main": "start-dev.js",
+  "scripts": {
+    "start": "node start-dev.js",
+    "stop": "docker stop rpgmylife-mongo && docker rm rpgmylife-mongo"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
