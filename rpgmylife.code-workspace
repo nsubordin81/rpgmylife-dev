@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../rpgmylife-threejs"
+		},
+		{
+			"path": "../rpgmylife-backend"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}
