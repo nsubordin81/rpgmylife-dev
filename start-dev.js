@@ -1,7 +1,8 @@
-const concurrently = require('concurrently');
+import concurrently from 'concurrently';
+
 const { result } = concurrently([
-  { command: 'docker ps -a | grep rpgmylife-mongo || docker run -d --name rpgmylife-mongo -p 27017:27017 mongo:latest && tail -f /dev/null', name: 'mongodb' },
-  { command: 'cd ../rpgmylife-backend && npm start', name: 'backend' },
+  { command: './start-mongo.sh', name: 'mongodb' },
+  { command: 'cd ../rpgmylife-backend && PORT=5001 npm start', name: 'backend' },
   { command: 'cd ../rpgmylife-threejs && npm run dev', name: 'frontend' }
 ], {
   prefix: 'name',
@@ -9,12 +10,12 @@ const { result } = concurrently([
   restartTries: 3,
 });
 
-result.then(success, failure);
-
-function success() {
+const success = () => {
   console.log('Success');
-}
+};
 
-function failure() {
+const failure = () => {
   console.log('Failure');
-}
+};
+
+result.then(success, failure);

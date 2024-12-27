@@ -1,5 +1,6 @@
 {
   "name": "rpgmylife-dev",
+  "type": "module",
   "version": "1.0.0",
   "description": "Development coordinator for RPG My Life",
   "main": "start-dev.js",
